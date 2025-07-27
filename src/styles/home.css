@@ -1,0 +1,134 @@
+
+
+
+
+
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.hero-badge {
+  background-color: #f97316;
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #1e1e1e;
+  margin-bottom: 1rem;
+}
+
+.highlight-orange {
+  color: #f97316;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.hero-btn.primary {
+  background-color: #f97316;
+  color: white;
+}
+
+.hero-btn.primary:hover {
+  background-color: #d25c0e;
+}
+
+.hero-btn.outline {
+  border: 2px solid #f97316;
+  color: #f97316;
+}
+
+.hero-btn.outline:hover {
+  background-color: #f97316;
+  color: white;
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  position: relative;
+  max-width: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.hero-badge-exp {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fff;
+  color: #1e1e1e;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.material-icons-outlined {
+  font-size: 1.2rem;
+}
+
+
+.btn.linkedin {
+  background-color: #1d1d1d;
+  color: white;
+}
+
+.btn.github {
+  background-color: white;
+  color: #1d1d1d;
+  border: 1px solid #ccc;
+}
+
+
