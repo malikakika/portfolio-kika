@@ -1,0 +1,46 @@
+
+:root{
+  --glow-size: 320px;
+  --glow-color: 255,45,135;      
+  --glow-core: 0.40;                
+  --glow-ring: 0.18;                 
+}
+
+html[data-theme="light"]{
+  --glow-core: 0.22;              
+  --glow-ring: 0.12;
+}
+
+.cursor-glow{
+  position: fixed;
+  left: 0; top: 0;
+  width: var(--glow-size);
+  height: var(--glow-size);
+  pointer-events: none;
+  z-index: 9;                           
+  will-change: transform;
+  mix-blend-mode: plus-lighter;       
+}
+
+@supports not (mix-blend-mode: plus-lighter){
+  .cursor-glow{ mix-blend-mode: screen; }
+}
+
+.cursor-glow::before{
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side,
+      rgba(var(--glow-color), var(--glow-core)) 0%,
+      rgba(var(--glow-color), var(--glow-ring)) 55%,
+      rgba(var(--glow-color), 0) 70%);
+  filter: blur(40px);
+}
+
+@media (pointer: coarse), (max-width: 820px){
+  .cursor-glow{ display: none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .cursor-glow{ display: none; }
+}

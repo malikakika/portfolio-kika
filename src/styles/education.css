@@ -1,0 +1,101 @@
+/* SECTION */
+.edu-section{
+  position: relative;
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(28px, 6vw, 90px) clamp(16px, 6vw, 28px);
+}
+.edu-container{ max-width: 1100px; margin: 0 auto; }
+
+/* TITLE */
+.edu-headline{
+  position: relative; display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+}
+.edu-h2{
+  font-size: clamp(22px, 3.6vw, 34px);
+  font-weight: 800; line-height: 1.1; display: inline-block; position: relative;
+}
+.edu-underline{
+  position: absolute; left: 0; right: 0; bottom: -6px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), #ff6aa9);
+  border-radius: 999px; transform-origin: left;
+  animation: edu-scan 2.6s ease-in-out infinite;
+}
+@keyframes edu-scan {
+  0% { transform: scaleX(.2); opacity:.4 }
+  50% { transform: scaleX(1); opacity:1 }
+  100% { transform: scaleX(.2); opacity:.4 }
+}
+.edu-orb{
+  width: 26px; height: 26px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff90c0, var(--accent));
+  filter: blur(.2px);
+  box-shadow: 0 0 34px rgba(255,45,135,.5), 0 0 80px rgba(255,45,135,.22);
+  animation: edu-orb 5s ease-in-out infinite alternate;
+}
+
+.edu-shuffle{
+  margin-left: auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-weight: 700;
+}
+.edu-shuffle:hover{ border-color: rgba(255,255,255,.22) }
+
+.edu-stack{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 26px;               
+  overflow: visible;
+}
+
+.edu-card{
+  transform: perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));
+  transition: transform .12s ease-out;
+}
+.edu-card-inner{
+  width: min(880px, 100%);
+  display: grid; grid-template-columns: 64px 1fr; gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(255,45,135,.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.06));
+  padding: 12px 14px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+}
+.edu-card:hover .edu-card-inner{
+  border-color: rgba(255,255,255,.2);
+  box-shadow: 0 16px 36px rgba(0,0,0,.28), 0 0 40px rgba(255,45,135,.16);
+}
+
+.edu-logo-wrap{
+  width: 64px; height: 64px; border-radius: 14px; overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,45,135,.18), rgba(255,106,169,.12));
+  border: 1px solid rgba(255,45,135,.35);
+  display: grid; place-items: center;
+}
+.edu-logo{ width: 100%; height: 100%; object-fit: cover; display:block; }
+
+.edu-info{ display: grid; align-content: center; }
+.edu-period{ font-size: 12px; color: var(--subtext); letter-spacing:.3px; }
+.edu-degree{
+  font-size: clamp(16px, 2.1vw, 19px); font-weight: 800; line-height: 1.15; margin-top: 2px;
+}
+.edu-school{
+  color: var(--text); opacity: .9; margin-top: 2px; line-height: 1.3;
+}
+.edu-loc{ color: var(--subtext); }
+
+.edu-card:hover{ --rx: 2deg; --ry: 0deg; }
+
+@media (max-width: 880px){
+  .edu-stack{ gap: 18px; }
+  .edu-card-inner{ grid-template-columns: 56px 1fr; gap: 12px; }
+  .edu-logo-wrap{ width: 56px; height: 56px; border-radius: 12px; }
+}

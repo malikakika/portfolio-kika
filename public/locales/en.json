@@ -1,0 +1,206 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggle_to_light": "Switch to light mode",
+    "toggle_to_dark": "Switch to dark mode",
+    "lang_fr": "FR",
+    "lang_en": "EN"
+  },
+  "home": {
+    "hello": "Hello 👋",
+    "i_am": "I am <strong>Malika</strong>,",
+    "role": "Full-stack Developer",
+    "desc": "Specialized in React, Angular and NestJS, I build performant, modern and accessible apps. Currently an apprentice at Capgemini.",
+    "cta_projects": "See my projects",
+    "stat_years": "years experience",
+    "stat_projects": "projects delivered",
+    "stat_stack": "React • Angular • NestJS",
+    "stack_label": "Stack:"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+"about": {
+    "title": "Who is Malika?",
+    "subtitle": "Full-stack Developer — React · Angular · NestJS · Spring Boot",
+  "desc": "Passionate full-stack developer turning ideas into reliable, elegant products. Front-end expert Angular, React, Vue, I also work full-stack Java/Spring, NestJS to design robust, scalable architectures. Leadership, teamwork, and project management to deliver fast, accessible, and genuinely useful applications."
+  },
+  "experience": {
+    "section_title": "Professional experience",
+    "items": [
+      {
+        "id": "capgemini",
+        "period": "Sep. 2024 — Present",
+        "role": "Software Engineer",
+        "company": "Capgemini Engineering",
+        "location": "Issy-les-Moulineaux, Île-de-France",
+        "mode": "Hybrid · Apprenticeship",
+        "bullets": [
+          "Design & develop performant, scalable applications",
+          "Set up & improve Continuous Delivery across apps",
+          "Optimize and ship web UIs (quality & usability)",
+          "Contribute to Back-End and explore new Front-End frameworks",
+          "Agile teamwork in human-sized squads & engineers community"
+        ],
+        "stack": ["Java", "Spring Boot", "TypeScript", "Angular", "React", "Node.js", "NestJS", "Cypress", "Jest", "GitHub", "GitLab", "Docker", "AWS", "PostgreSQL", "Jira"]
+      },
+      {
+        "id": "creteil",
+        "period": "Jun. 2024 — Aug. 2024",
+        "role": "Administrative Assistant (Temp)",
+        "company": "Rectorat – Académie de Créteil (DPE)",
+        "location": "Créteil, Île-de-France",
+        "mode": "On-site · Fixed-term",
+        "bullets": [
+          "Created & organized teachers’ records",
+          "General administrative support and daily operations",
+          "Team collaboration for effective records management"
+        ],
+        "stack": ["Organization", "Adaptability", "Communication", "Administration"]
+      },
+      {
+        "id": "digital-maroc",
+        "period": "Dec. 2023 — Mar. 2024",
+        "role": "Project Lead",
+        "company": "Digital Maroc School",
+        "location": "Morocco",
+        "mode": "Hybrid · Fixed-term",
+        "bullets": [
+          "Led website development & remote project oversight",
+          "Guided trainers and ensured pedagogical quality"
+        ],
+        "stack": ["TypeScript", "Node.js", "Leadership", "UX", "Agile", "Git"]
+      },
+      {
+        "id": "digital-france",
+        "period": "Dec. 2023 — Feb. 2024",
+        "role": "Project Lead",
+        "company": "Digital France School",
+        "location": "Île-de-France",
+        "mode": "On-site · Fixed-term",
+        "bullets": [
+          "Drove site design/development/maintenance",
+          "Trained partners in Office, HTML/CSS/JS/PHP, Angular"
+        ],
+        "stack": ["TypeScript", "Angular", "PHP", "React", "HTML5", "CSS", "JavaScript", "Agile", "Jira", "Git"]
+      },
+      {
+        "id": "lateliers",
+        "period": "Nov. 2023 — Dec. 2023",
+        "role": "Web Dev Intern",
+        "company": "LATELIERS",
+        "location": "",
+        "mode": "Internship",
+        "bullets": [
+          "Built an RFID platform and improved internal tools"
+        ],
+        "stack": ["React Native", "TypeScript", "C#", "Azure", "MySQL", "Azure DevOps", "RFID"]
+      },
+      {
+        "id": "maharat",
+        "period": "Dec. 2020 — Dec. 2023",
+        "role": "Founder & Director",
+        "company": "Maharat.ma",
+        "location": "Rabat, Morocco",
+        "mode": "Hybrid · Self-employed",
+        "bullets": [
+          "Created & led a training platform (design, dev, entrepreneurship)",
+          "Project management, instructors coordination, learners communication"
+        ],
+        "stack": ["Leadership", "Strategy", "Team management", "Pedagogy", "Content", "Organization"]
+      },
+      {
+        "id": "orange",
+        "period": "Feb. 2023 — Jul. 2023",
+        "role": "Full-stack Developer (Intern)",
+        "company": "Orange",
+        "location": "Rabat-Salé-Kénitra, Morocco",
+        "mode": "On-site · Internship",
+        "bullets": [
+          "Parents/newborns networking platform: Angular front & Spring back",
+          "Dockerization, technical docs & Swagger, Agile (Jira)"
+        ],
+        "stack": ["Angular", "TypeScript", "Spring Boot", "Java", "PostgreSQL", "Docker", "Figma", "UML", "Git"]
+      }
+    ]
+  },
+  "education": {
+    "section_title": "Education",
+    "items": [
+      {
+        "id": "dc",
+        "period": "2023 — 2025",
+        "degree": "Master’s — Tech Lead",
+        "school": "Digital Campus",
+        "location": "Paris, France",
+        "logo": "/logos/digital-campus.png"
+      },
+      {
+        "id": "msid",
+        "period": "2021 — 2023",
+        "degree": "Master — Data Science & Engineering",
+        "school": "Faculty of Sciences",
+        "location": "Rabat, Morocco",
+        "logo": "/logos/faculte-sciences-rabat.png"
+      },
+      {
+        "id": "smi",
+        "period": "2017 — 2021",
+        "degree": "Bachelor — Mathematics & Computer Science",
+        "school": "Faculty of Sciences",
+        "location": "Rabat, Morocco",
+        "logo": "/logos/faculte-sciences-rabat.png"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of recent work.",
+    "filters": "Filters",
+    "view": "View project",
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "platform": "Platform",
+      "pwa": "PWA",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile",
+      "game": "Game",
+      "contrib": "Contribution",
+      "other": "Other"
+    },
+    "items": [
+      {
+        "id": "roadshine",
+        "title": "Roadshine",
+        "period": "2024 — …",
+        "brief": "Career guidance platform matching profiles with opportunities.",
+        "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker"],
+        "category": "platform",
+        "live": "https://roadshine.ma"
+      },
+      {
+        "id": "acorad",
+        "title": "Acorad Academy",
+        "period": "2024",
+        "brief": "Responsive showcase website in React + TypeScript + Tailwind for a digital marketing expert.",
+        "stack": ["React", "TypeScript", "Tailwind"],
+        "category": "web"
+      },
+      {
+        "id": "fileor",
+        "title": "Fileor",
+        "period": "2024",
+        "brief": "File management & sharing with auth and roles.",
+        "stack": ["React", "NestJS", "PostgreSQL"],
+        "category": "platform"
+      }
+    ]
+  }
+
+}
