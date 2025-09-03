@@ -1,0 +1,141 @@
+.site-footer{
+  position: relative;
+  background: var(--bg);
+  color: var(--text);
+  padding: clamp(28px, 6vw, 80px) clamp(16px, 6vw, 28px);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.foot-glow{
+  position: absolute;
+  right: -120px; bottom: -120px;
+  width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(180px 180px at 40% 40%, rgba(255,144,192,.9), var(--accent));
+  filter: blur(40px);
+  opacity: .35;
+  animation: foot-float 8s ease-in-out infinite alternate;
+  z-index: -1;
+}
+@keyframes foot-float {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(-16px,-14px) scale(1.02); }
+}
+
+.foot-inner{ max-width: 1100px; margin: 0 auto; }
+
+.foot-cta{
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(18px, 3vw, 32px);
+  align-items: stretch;
+}
+
+.foot-title{
+  font-size: clamp(22px, 3.6vw, 34px);
+  font-weight: 800;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+}
+.foot-underline{
+  position: absolute; left: 0; right: 0; bottom: -6px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), #ff6aa9);
+  border-radius: 999px;
+  transform-origin: left;
+  animation: foot-scan 2.6s ease-in-out infinite;
+}
+@keyframes foot-scan{
+  0%{ transform: scaleX(.2); opacity:.4 }
+  50%{ transform: scaleX(1); opacity:1 }
+  100%{ transform: scaleX(.2); opacity:.4 }
+}
+
+.foot-tagline{
+  margin-top: 10px;
+  color: var(--subtext);
+  line-height: 1.6;
+}
+
+.foot-actions{
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-top: 14px;
+}
+
+.btn.ghost{
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.06));
+}
+.btn.tiny{
+  padding: 6px 10px; font-size: 13px; border-radius: 999px;
+}
+.btn.linkedin, .btn.github{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; padding: 0;
+  border-radius: 12px;
+}
+
+.foot-card{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(255,45,135,.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.06));
+  padding: 14px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+}
+.foot-card-head{
+  display:flex; align-items:center; gap:8px; margin-bottom: 6px;
+}
+.foot-card-head .chip{
+  padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 12px;
+  border: 1px solid rgba(255,45,135,.35);
+  background: linear-gradient(135deg, rgba(255,45,135,.18), rgba(255,106,169,.12));
+}
+.ping{
+  width:10px; height:10px; border-radius:50%; background: var(--accent);
+  box-shadow: 0 0 14px rgba(255,45,135,.65);
+  position: relative;
+}
+.ping::after{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:2px solid var(--accent); opacity:.4;
+  animation: ping 1.8s ease-out infinite;
+}
+@keyframes ping{
+  from{ transform: scale(.8); opacity:.6 }
+  to{ transform: scale(2.2); opacity: 0 }
+}
+
+.foot-card-text{ color: var(--text); opacity:.92; line-height: 1.55; }
+.foot-card-actions{ display:flex; gap:8px; margin-top:10px; }
+
+.foot-links{
+  display:flex; flex-wrap:wrap; gap: 12px 18px;
+  margin: clamp(18px, 3vw, 28px) 0 8px;
+}
+.foot-links a{
+  color: var(--text);
+  opacity: .82;
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: opacity .2s, border-color .2s;
+}
+.foot-links a:hover{
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.foot-meta{
+  display:flex; flex-wrap:wrap; gap: 8px 16px;
+  color: var(--subtext);
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+@media (max-width: 840px){
+  .foot-cta{ grid-template-columns: 1fr; }
+}

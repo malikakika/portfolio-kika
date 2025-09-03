@@ -27,3 +27,50 @@ button{font:inherit; color:inherit; background:none; border:0; padding:0; cursor
 @media (max-width:920px){
   .app-main{ padding-top:64px; }
 }
+
+
+.pj-section.wow-hit {
+  position: relative;
+}
+
+.pj-section.wow-hit::before{
+  content:"";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: -40px;
+  height: 140px;
+  pointer-events: none;
+  background: radial-gradient(240px 120px at 50% 0%, rgba(255,45,135,.18), transparent 60%);
+  animation: pj-glowfade 1s ease-out;
+  z-index: 0;
+}
+@keyframes pj-glowfade { from { opacity: .85 } to { opacity: 0 } }
+
+.pj-section.wow-hit .pj-h2{
+  position: relative;
+  z-index: 1;
+}
+.pj-section.wow-hit .pj-h2::after{
+  content:"";
+  position: absolute; left:-10%; right:-10%; height:3px; bottom:-8px;
+  background: linear-gradient(90deg, var(--accent), #ff6aa9);
+  filter: drop-shadow(0 0 8px rgba(255,45,135,.35));
+  animation: pj-sweep .9s ease-out;
+}
+@keyframes pj-sweep {
+  0%{ transform: translateX(-110%); opacity:.3 }
+  100%{ transform: translateX(110%); opacity:1 }
+}
+
+.pj-section.wow-hit .pj-card{
+  animation: pj-pop 600ms cubic-bezier(.2,.8,.2,1) both;
+}
+.pj-section.wow-hit .pj-card:nth-child(odd){ animation-delay: .05s; }
+.pj-section.wow-hit .pj-card:nth-child(even){ animation-delay: .12s; }
+
+@keyframes pj-pop {
+  0%{ transform: translateY(12px) scale(.98); filter: blur(3px); opacity: 0; }
+  60%{ transform: translateY(-4px) scale(1.02); opacity: 1; }
+  100%{ transform: translateY(0) scale(1); filter: blur(0) }
+}

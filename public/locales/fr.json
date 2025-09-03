@@ -1,15 +1,16 @@
 {
-  "header": {
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "projects": "Projects",
-    "contact": "Contact",
-    "toggle_to_light": "Passer en mode clair",
-    "toggle_to_dark": "Passer en mode sombre",
-    "lang_fr": "FR",
-    "lang_en": "EN"
-  },
+ "header": {
+  "home": "Accueil",
+  "about": "À propos",
+  "services": "Services",
+  "projects": "Projets",
+  "contact": "Contact",
+  "toggle_to_light": "Passer en mode clair",
+  "toggle_to_dark": "Passer en mode sombre",
+  "lang_fr": "FR",
+  "lang_en": "EN"
+},
+
   "home": {
     "hello": "Hello 👋",
     "i_am": "Je suis <strong>Malika</strong>,",
@@ -25,12 +26,14 @@
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
- "about": {
+  "about": {
     "title": "Qui est Malika ?",
     "subtitle": "Développeuse Fullstack — React · Angular · NestJS · Spring Boot",
     "desc": "Développeuse full-stack passionnée, je transforme des idées en produits fiables et élégants. Experte front-end Angular, React, Vue, j’interviens aussi en full-stack Java/Spring, NestJS pour concevoir des architectures robustes et évolutives. Leadership, esprit d’équipe et gestion de projet pour des applications rapides, accessibles et utiles."
   },
   "experience": {
+    "title": "Expériences",
+
     "section_title": "Expériences professionnelles",
     "items": [
       {
@@ -47,7 +50,23 @@
           "Contribuer côté Back-End et explorer de nouveaux frameworks Front-End",
           "Collaborer en Agile dans des équipes à taille humaine & communauté d’ingénieurs"
         ],
-        "stack": ["Java", "Spring Boot", "TypeScript", "Angular", "React", "Node.js", "NestJS", "Cypress", "Jest", "GitHub", "GitLab", "Docker", "AWS", "PostgreSQL", "Jira"]
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "TypeScript",
+          "Angular",
+          "React",
+          "Node.js",
+          "NestJS",
+          "Cypress",
+          "Jest",
+          "GitHub",
+          "GitLab",
+          "Docker",
+          "AWS",
+          "PostgreSQL",
+          "Jira"
+        ]
       },
       {
         "id": "creteil",
@@ -61,7 +80,12 @@
           "Assistance administrative & support aux tâches quotidiennes",
           "Collaboration d’équipe pour une gestion efficace des dossiers"
         ],
-        "stack": ["Organisation", "Adaptabilité", "Communication", "Gestion administrative"]
+        "stack": [
+          "Organisation",
+          "Adaptabilité",
+          "Communication",
+          "Gestion administrative"
+        ]
       },
       {
         "id": "digital-maroc",
@@ -87,7 +111,18 @@
           "Direction conception/développement/maintenance du site institutionnel",
           "Formation d’apprenants (bureautique, HTML/CSS/JS/PHP, Angular)"
         ],
-        "stack": ["TypeScript", "Angular", "PHP", "React", "HTML5", "CSS", "JavaScript", "Agile", "Jira", "Git"]
+        "stack": [
+          "TypeScript",
+          "Angular",
+          "PHP",
+          "React",
+          "HTML5",
+          "CSS",
+          "JavaScript",
+          "Agile",
+          "Jira",
+          "Git"
+        ]
       },
       {
         "id": "lateliers",
@@ -99,7 +134,15 @@
         "bullets": [
           "Création d’une plateforme RFID et amélioration d’outils internes"
         ],
-        "stack": ["React Native", "TypeScript", "C#", "Azure", "MySQL", "Azure DevOps", "RFID"]
+        "stack": [
+          "React Native",
+          "TypeScript",
+          "C#",
+          "Azure",
+          "MySQL",
+          "Azure DevOps",
+          "RFID"
+        ]
       },
       {
         "id": "maharat",
@@ -112,7 +155,14 @@
           "Création & direction d’une plateforme de formation (design, dev, entrepreneuriat)",
           "Gestion de projet, coordination d’intervenants & communication apprenants"
         ],
-        "stack": ["Leadership", "Stratégie", "Gestion d’équipe", "Pédagogie", "Contenu", "Organisation"]
+        "stack": [
+          "Leadership",
+          "Stratégie",
+          "Gestion d’équipe",
+          "Pédagogie",
+          "Contenu",
+          "Organisation"
+        ]
       },
       {
         "id": "orange",
@@ -125,7 +175,17 @@
           "Plateforme de networking parents/nourrissants : front Angular & back Spring",
           "Conteneurisation Docker, doc technique & Swagger, Agile (Jira)"
         ],
-        "stack": ["Angular", "TypeScript", "Spring Boot", "Java", "PostgreSQL", "Docker", "Figma", "UML", "Git"]
+        "stack": [
+          "Angular",
+          "TypeScript",
+          "Spring Boot",
+          "Java",
+          "PostgreSQL",
+          "Docker",
+          "Figma",
+          "UML",
+          "Git"
+        ]
       }
     ]
   },
@@ -138,7 +198,7 @@
         "degree": "Mastère Tech Lead",
         "school": "Digital Campus",
         "location": "Paris, France",
-        "logo": "/logos/digital-campus.png"
+        "logo": "src/assets/DC.jpg"
       },
       {
         "id": "msid",
@@ -146,7 +206,7 @@
         "degree": "Master Sciences et Ingénierie de Données",
         "school": "Faculté des Sciences",
         "location": "Rabat, Maroc",
-        "logo": "/logos/faculte-sciences-rabat.png"
+        "logo": "src/assets/fsr.png"
       },
       {
         "id": "smi",
@@ -154,7 +214,7 @@
         "degree": "Licence Sciences Mathématiques & Informatique",
         "school": "Faculté des Sciences",
         "location": "Rabat, Maroc",
-        "logo": "/logos/faculte-sciences-rabat.png"
+        "logo": "src/assets/fsr.png"
       }
     ]
   },
@@ -178,11 +238,19 @@
       {
         "id": "roadshine",
         "title": "Roadshine",
-        "period": "2024 — …",
+        "period": "2025",
         "brief": "Plateforme d’orientation professionnelle pour matcher profils et opportunités.",
-        "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker"],
+        "stack": [
+          "React",
+          "NestJS",
+          "PostgreSQL",
+          "TypeScript",
+          "Docker",
+          "Nx workspace"
+        ],
         "category": "platform",
-        "live": "https://roadshine.ma"
+        "live": "https://roadshine.ma",
+        "cover": "src/assets/roadshine.png"
       },
       {
         "id": "acorad",
@@ -190,11 +258,22 @@
         "period": "2024",
         "brief": "Site vitrine responsive en React + TypeScript + Tailwind pour une experte en marketing digital.",
         "stack": ["React", "TypeScript", "Tailwind"],
-        "category": "web"
+        "category": "web",
+        "live": "https://acoradacademy.com/",
+        "cover": "src/assets/acorad.png"
       }
-    
     ]
+  },
+  "footer": {
+    "title": "On construit quelque chose de génial ?",
+    "tagline": "Un projet, une mission ou une idée à challenger ? Je réponds vite et j'apporte des solutions concrètes.",
+    "cta_email": "Email",
+    "cta_contact": "Contact",
+    "available": "Disponible pour échanger",
+    "pitch": "Je conçois des interfaces élégantes et des architectures robustes. Parlons de vos besoins.",
+    "email_me": "M’écrire",
+    "view_work": "Voir mes projets",
+    "quick_links_aria": "Liens rapides du pied de page",
+    "rights": "Tous droits réservés."
   }
-
-  
 }

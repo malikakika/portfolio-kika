@@ -1,4 +1,3 @@
-/* ===== THEME VARS (réutilise celles de home.css) ===== */
 :root {
   --bg: #0b0b0f;
   --text: #e9e9ee;
@@ -23,7 +22,6 @@ html[data-theme="light"] {
   --shadow: 0 12px 24px rgba(20, 7, 13, 0.08);
 }
 
-/* ===== HEADER ===== */
 .header-jc {
   position: sticky;
   top: 0;
@@ -72,7 +70,6 @@ html[data-theme="light"] .header-jc {
   letter-spacing: 0.5px;
 }
 
-/* NAV */
 .nav-jc {
   display: flex;
   align-items: center;

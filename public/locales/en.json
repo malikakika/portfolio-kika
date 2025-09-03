@@ -31,6 +31,8 @@
   "desc": "Passionate full-stack developer turning ideas into reliable, elegant products. Front-end expert Angular, React, Vue, I also work full-stack Java/Spring, NestJS to design robust, scalable architectures. Leadership, teamwork, and project management to deliver fast, accessible, and genuinely useful applications."
   },
   "experience": {
+        "title": "Experiences",
+
     "section_title": "Professional experience",
     "items": [
       {
@@ -138,7 +140,7 @@
         "degree": "Master’s — Tech Lead",
         "school": "Digital Campus",
         "location": "Paris, France",
-        "logo": "/logos/digital-campus.png"
+        "logo": "src/assets/DC.jpg"
       },
       {
         "id": "msid",
@@ -146,7 +148,7 @@
         "degree": "Master — Data Science & Engineering",
         "school": "Faculty of Sciences",
         "location": "Rabat, Morocco",
-        "logo": "/logos/faculte-sciences-rabat.png"
+        "logo": "src/assets/fsr.png"
       },
       {
         "id": "smi",
@@ -154,7 +156,7 @@
         "degree": "Bachelor — Mathematics & Computer Science",
         "school": "Faculty of Sciences",
         "location": "Rabat, Morocco",
-        "logo": "/logos/faculte-sciences-rabat.png"
+        "logo": "src/assets/fsr.png"
       }
     ]
   },
@@ -178,11 +180,13 @@
       {
         "id": "roadshine",
         "title": "Roadshine",
-        "period": "2024 — …",
+        "period": "2025",
         "brief": "Career guidance platform matching profiles with opportunities.",
-        "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker"],
+        "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker","Nx workspace"],
         "category": "platform",
-        "live": "https://roadshine.ma"
+        "live": "https://roadshine.ma",
+        "cover":"src/assets/roadshine.png"
+
       },
       {
         "id": "acorad",
@@ -190,7 +194,12 @@
         "period": "2024",
         "brief": "Responsive showcase website in React + TypeScript + Tailwind for a digital marketing expert.",
         "stack": ["React", "TypeScript", "Tailwind"],
-        "category": "web"
+        "category": "web",
+        "live": "https://acoradacademy.com/",
+        "cover":"src/assets/acorad.png"
+
+
+
       },
       {
         "id": "fileor",
@@ -201,6 +210,19 @@
         "category": "platform"
       }
     ]
+  
+  },
+    "footer": {
+    "title": "Let’s build something great.",
+    "tagline": "Got a project or an idea to explore? I reply quickly and bring pragmatic solutions.",
+    "cta_email": "Email",
+    "cta_contact": "Contact",
+    "available": "Open to chat",
+    "pitch": "I craft elegant UIs and robust architectures. Let’s talk about your needs.",
+    "email_me": "Email me",
+    "view_work": "View my work",
+    "quick_links_aria": "Footer quick links",
+    "rights": "All rights reserved."
   }
 
 }

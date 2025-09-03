@@ -1,6 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { scrollWow } from "../utils/scrollWow";
 import "../styles/header.css";
 
 function LanguageSwitcher() {
@@ -15,7 +16,7 @@ function LanguageSwitcher() {
   };
 
   return (
-    <button className="lang-toggle" onClick={toggle} aria-label="Changer de langue">
+    <button className="lang-toggle" onClick={toggle} aria-label="Change language">
       {label}
     </button>
   );
@@ -42,7 +43,6 @@ function ThemeToggle() {
       title={title}
     >
       {theme === "dark" ? (
-        // soleil
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
           <path
             fill="currentColor"
@@ -50,53 +50,85 @@ function ThemeToggle() {
           />
         </svg>
       ) : (
-        // lune
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            fill="currentColor"
-            d="M12.74 2.01a9 9 0 109.25 12.2 8 8 0 01-9.25-12.2z"
-          />
+          <path fill="currentColor" d="M12.74 2.01a9 9 0 109.25 12.2 8 8 0 01-9.25-12.2z" />
         </svg>
       )}
     </button>
   );
 }
 
+type NavItem =
+  | { label: string; type: "route"; to: string }
+  | { label: string; type: "hash"; hash: string }; 
+
 export default function Header() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => setOpen(false), [location.pathname]);
 
   useEffect(() => {
-    setOpen(false);
-  }, []);
+    if (location.pathname !== "/" || !location.hash) return;
 
-  const items = [
-    { to: "/", label: t("header.home") },
-    { to: "/a-propos", label: t("header.about") },
-    { to: "/services", label: t("header.services") },
-    { to: "/projets", label: t("header.projects") },
-    { to: "/contact", label: t("header.contact") },
+    let tries = 0;
+    const tryScroll = () => {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        scrollWow(el, { duration: 900, overshoot: 80 });
+      } else if (tries < 20) {
+        tries++;
+        requestAnimationFrame(tryScroll);
+      }
+    };
+    requestAnimationFrame(tryScroll);
+  }, [location.pathname, location.hash]);
+
+  const items: NavItem[] = [
+    { label: t("header.home"), type: "route", to: "/" },
+    { label: t("header.about"), type: "hash", hash: "#about" },
+    { label: t("header.projects"), type: "hash", hash: "#projects" },
+    { label: t("header.contact"), type: "hash", hash: "#footer" },
   ];
+
+  const handleAnchorClick = (hash: string) => (e: React.MouseEvent) => {
+    const isHome = location.pathname === "/";
+    if (isHome) {
+      e.preventDefault();
+      scrollWow(hash, { duration: 900, overshoot: 80 });
+      setOpen(false);
+    } else {
+      e.preventDefault();
+      navigate("/" + hash);
+    }
+  };
 
   return (
     <header className="header-jc">
       <div className="inner">
-        <Link to="/" className="logo" aria-label="Retour à l'accueil">
+        <Link to="/" className="logo" aria-label="Retour à l'accueil" onClick={() => setOpen(false)}>
           <span className="logo-badge">MC</span>
-          <span className="logo-text">Malika</span>
         </Link>
 
         <nav className={`nav-jc ${open ? "open" : ""}`} aria-label="Navigation principale">
-          {items.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) => `nav-btn ${isActive ? "active" : ""}`}
-              end
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          {items.map((item) =>
+            item.type === "route" ? (
+              <Link key={item.label} to={item.to} className="nav-btn" onClick={() => setOpen(false)}>
+                {item.label}
+              </Link>
+            ) : (
+              <Link
+                key={item.label}
+                to={`/${item.hash}`}
+                className="nav-btn"
+                onClick={handleAnchorClick(item.hash)}
+              >
+                {item.label}
+              </Link>
+            )
+          )}
 
           <LanguageSwitcher />
           <ThemeToggle />

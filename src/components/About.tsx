@@ -4,20 +4,17 @@ import type { Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "../styles/about.css";
 import "../styles/education.css";
-import SkillsPlanet from "../components/SkillsPlanet"; 
+import SkillsPlanet from "../components/SkillsPlanet";
 
-// --- à coller en haut du fichier, après les imports ---
 function HighlightedText({ text }: { text: string }) {
   const { i18n } = useTranslation();
   const lang = (i18n.resolvedLanguage || i18n.language || "fr").slice(0, 2);
 
   type Token = { re: RegExp; cls: "hard" | "soft" | "trait" };
 
-  // Mots/expressions à surligner (EN & FR)
   const TOKENS: Token[] =
     lang === "en"
       ? [
-          // hard
           { re: /\bfull[-\s]?stack\b/gi, cls: "hard" },
           { re: /\bfront[-\s]?end\b/gi, cls: "hard" },
           { re: /\bAngular\b/g, cls: "hard" },
@@ -28,7 +25,6 @@ function HighlightedText({ text }: { text: string }) {
           { re: /\bJava\b/g, cls: "hard" },
           { re: /\bSpring\s?Boot\b/gi, cls: "hard" },
 
-          // soft / traits
           { re: /\bleadership\b/gi, cls: "soft" },
           { re: /\bteam(?:\s?work|work)\b/gi, cls: "soft" },
           { re: /\bproject management\b/gi, cls: "soft" },
@@ -38,7 +34,6 @@ function HighlightedText({ text }: { text: string }) {
           { re: /\belegant\b/gi, cls: "trait" },
         ]
       : [
-          // FR — hard
           { re: /\bfull[-\s]?stack\b/gi, cls: "hard" },
           { re: /\bfront[-\s]?end\b/gi, cls: "hard" },
           { re: /\bAngular\b/g, cls: "hard" },
@@ -49,7 +44,6 @@ function HighlightedText({ text }: { text: string }) {
           { re: /\bJava\b/g, cls: "hard" },
           { re: /\bSpring\s?Boot\b/gi, cls: "hard" },
 
-          // FR — soft / traits
           { re: /\bleadership\b/gi, cls: "soft" },
           { re: /\btravail d[’']équipe\b/gi, cls: "soft" },
           { re: /\bgestion de projet\b/gi, cls: "soft" },
@@ -59,16 +53,20 @@ function HighlightedText({ text }: { text: string }) {
           { re: /\bélegant(es)?\b/gi, cls: "trait" },
         ];
 
-  // Scan du texte et wrap des matches en <span className="kw kw-xxx">
   const parts: React.ReactNode[] = [];
   let pos = 0;
 
   while (pos < text.length) {
     let nextIndex = Infinity;
-    let hit: { start: number; end: number; cls: Token["cls"]; match: string } | null = null;
+    let hit: {
+      start: number;
+      end: number;
+      cls: Token["cls"];
+      match: string;
+    } | null = null;
 
     for (const tok of TOKENS) {
-      const re = new RegExp(tok.re.source, tok.re.flags.replace("g", "") + "g"); // copie safe
+      const re = new RegExp(tok.re.source, tok.re.flags.replace("g", "") + "g");
       re.lastIndex = pos;
       const m = re.exec(text);
       if (m && m.index < nextIndex) {
@@ -94,8 +92,6 @@ function HighlightedText({ text }: { text: string }) {
   return <>{parts}</>;
 }
 
-
-/* ========= Types ========= */
 type Xp = {
   id: string;
   period: string;
@@ -115,10 +111,8 @@ type Edu = {
   logo?: string;
 };
 
-/* ========= Easing ========= */
 const easeOutExpo = [0.17, 0.84, 0.44, 1] as const;
 
-/* ========= Variants ========= */
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 22 },
   show: {
@@ -133,10 +127,14 @@ const listVariants: Variants = {
 };
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 18, scale: 0.985 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: easeOutExpo } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.55, ease: easeOutExpo },
+  },
 };
 
-/* ========= Carte Expérience ========= */
 function XpCard({ xp }: { xp: Xp }) {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
@@ -186,10 +184,16 @@ function XpCard({ xp }: { xp: Xp }) {
           transition={{ duration: 0.32, ease: easeOutExpo }}
         >
           <ul className="ae-bullets">
-            {xp.bullets?.map((b, i) => <li key={i}>{b}</li>)}
+            {xp.bullets?.map((b, i) => (
+              <li key={i}>{b}</li>
+            ))}
           </ul>
           <div className="ae-tags">
-            {xp.stack?.map((tag) => <span className="ae-tag" key={tag}>{tag}</span>)}
+            {xp.stack?.map((tag) => (
+              <span className="ae-tag" key={tag}>
+                {tag}
+              </span>
+            ))}
           </div>
         </motion.div>
 
@@ -200,7 +204,9 @@ function XpCard({ xp }: { xp: Xp }) {
           aria-controls={`xp-body-${xp.id}`}
         >
           <span className="ae-expand-label">
-            {open ? t("experience.less", "Voir moins") : t("experience.more", "Voir plus")}
+            {open
+              ? t("experience.less", "Voir moins")
+              : t("experience.more", "Voir plus")}
           </span>
           <span className={`ae-chevron ${open ? "open" : ""}`} aria-hidden />
         </button>
@@ -209,25 +215,26 @@ function XpCard({ xp }: { xp: Xp }) {
   );
 }
 
-/* ========= Section About + XP + Education ========= */
 export default function AboutExperience() {
   const { t } = useTranslation();
 
-  // About
   const title = (t("about.title") as string) || "Qui est Malika ?";
   const desc = (t("about.desc") as string) || "";
 
-  // Data
   const items = (t("experience.items", { returnObjects: true }) || []) as Xp[];
-  const eduItems = (t("education.items", { returnObjects: true }) || []) as Edu[];
+  const eduItems = (t("education.items", { returnObjects: true }) ||
+    []) as Edu[];
 
-  // Progress bar liée au scroll de la colonne XP
   const xpRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: xpRef,
     offset: ["start 0.15", "end 0.2"],
   });
-  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 22, mass: 0.3 });
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 22,
+    mass: 0.3,
+  });
 
   return (
     <section className="ae-section" id="about">
@@ -245,7 +252,9 @@ export default function AboutExperience() {
                 {title} <span className="ae-underline" aria-hidden />
               </h2>
             </div>
-<p className="ae-desc"><HighlightedText text={desc} /></p>
+            <p className="ae-desc">
+              <HighlightedText text={desc} />
+            </p>
           </div>
 
           <div className="ae-intro-right">
@@ -262,7 +271,19 @@ export default function AboutExperience() {
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
           >
-            <motion.span className="ae-progress" style={{ scaleY: progress }} aria-hidden />
+            <div className="ae-title-wrap" style={{ marginBottom: 10 }}>
+              <h2 className="ae-h2">
+                {t("experience.title")}
+                <span className="ae-underline" aria-hidden />
+              </h2>
+            </div>
+
+            <motion.span
+              className="ae-progress"
+              style={{ scaleY: progress }}
+              aria-hidden
+            />
+
             <motion.ul
               className="ae-xp-list"
               variants={listVariants}
@@ -270,7 +291,9 @@ export default function AboutExperience() {
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {items.map((xp) => <XpCard key={xp.id} xp={xp} />)}
+              {items.map((xp) => (
+                <XpCard key={xp.id} xp={xp} />
+              ))}
             </motion.ul>
           </motion.div>
 
@@ -293,7 +316,13 @@ export default function AboutExperience() {
                   <motion.li
                     key={ed.id}
                     className="edu-card"
-                    initial={{ x: s.x, y: s.y, rotate: s.r, scale: s.s, opacity: 0 }}
+                    initial={{
+                      x: s.x,
+                      y: s.y,
+                      rotate: s.r,
+                      scale: s.s,
+                      opacity: 0,
+                    }}
                     whileInView={{
                       x: [s.x, s.x * 0.4, 0],
                       y: [s.y, 12, 0],
@@ -314,7 +343,9 @@ export default function AboutExperience() {
                             src={ed.logo}
                             alt={ed.school}
                             loading="lazy"
-                            onError={(e) => (e.currentTarget.style.display = "none")}
+                            onError={(e) =>
+                              (e.currentTarget.style.display = "none")
+                            }
                           />
                         ) : null}
                       </div>
@@ -322,7 +353,8 @@ export default function AboutExperience() {
                         <span className="edu-period">{ed.period}</span>
                         <h4 className="edu-degree">{ed.degree}</h4>
                         <p className="edu-school">
-                          {ed.school} <span className="edu-loc">— {ed.location}</span>
+                          {ed.school}{" "}
+                          <span className="edu-loc">— {ed.location}</span>
                         </p>
                       </div>
                     </div>
