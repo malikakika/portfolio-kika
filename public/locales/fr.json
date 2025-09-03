@@ -198,7 +198,7 @@
         "degree": "Mastère Tech Lead",
         "school": "Digital Campus",
         "location": "Paris, France",
-        "logo": "src/assets/DC.jpg"
+        "logo": "/assets/DC.jpg"
       },
       {
         "id": "msid",
@@ -206,7 +206,7 @@
         "degree": "Master Sciences et Ingénierie de Données",
         "school": "Faculté des Sciences",
         "location": "Rabat, Maroc",
-        "logo": "src/assets/fsr.png"
+        "logo": "/assets/fsr.png"
       },
       {
         "id": "smi",
@@ -214,7 +214,7 @@
         "degree": "Licence Sciences Mathématiques & Informatique",
         "school": "Faculté des Sciences",
         "location": "Rabat, Maroc",
-        "logo": "src/assets/fsr.png"
+        "logo": "/assets/fsr.png"
       }
     ]
   },
@@ -250,7 +250,7 @@
         ],
         "category": "platform",
         "live": "https://roadshine.ma",
-        "cover": "src/assets/roadshine.png"
+        "cover": "/assets/roadshine.png"
       },
       {
         "id": "acorad",
@@ -260,7 +260,7 @@
         "stack": ["React", "TypeScript", "Tailwind"],
         "category": "web",
         "live": "https://acoradacademy.com/",
-        "cover": "src/assets/acorad.png"
+        "cover": "/assets/acorad.png"
       }
     ]
   },

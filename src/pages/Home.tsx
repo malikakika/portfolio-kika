@@ -3,7 +3,7 @@ import { useTranslation, Trans } from "react-i18next";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/EmailRounded";
-import HeroImage from "../assets/malika-hero.png";
+import HeroImage from "../../public/assets/malika-hero.png";
 import "../styles/home.css";
 import AboutExperience from "../components/About";
 import Projects from "../components/Projects";

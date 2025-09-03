@@ -140,7 +140,7 @@
         "degree": "Master’s — Tech Lead",
         "school": "Digital Campus",
         "location": "Paris, France",
-        "logo": "src/assets/DC.jpg"
+        "logo": "/assets/DC.jpg"
       },
       {
         "id": "msid",
@@ -148,7 +148,7 @@
         "degree": "Master — Data Science & Engineering",
         "school": "Faculty of Sciences",
         "location": "Rabat, Morocco",
-        "logo": "src/assets/fsr.png"
+        "logo": "/assets/fsr.png"
       },
       {
         "id": "smi",
@@ -156,7 +156,7 @@
         "degree": "Bachelor — Mathematics & Computer Science",
         "school": "Faculty of Sciences",
         "location": "Rabat, Morocco",
-        "logo": "src/assets/fsr.png"
+        "logo": "/assets/fsr.png"
       }
     ]
   },
@@ -185,7 +185,7 @@
         "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker","Nx workspace"],
         "category": "platform",
         "live": "https://roadshine.ma",
-        "cover":"src/assets/roadshine.png"
+        "cover":"/assets/roadshine.png"
 
       },
       {
@@ -196,18 +196,10 @@
         "stack": ["React", "TypeScript", "Tailwind"],
         "category": "web",
         "live": "https://acoradacademy.com/",
-        "cover":"src/assets/acorad.png"
+        "cover":"/assets/acorad.png"
 
 
 
-      },
-      {
-        "id": "fileor",
-        "title": "Fileor",
-        "period": "2024",
-        "brief": "File management & sharing with auth and roles.",
-        "stack": ["React", "NestJS", "PostgreSQL"],
-        "category": "platform"
       }
     ]
   
