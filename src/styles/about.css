@@ -252,3 +252,36 @@ padding: 0 clamp(16px, 6vw, 28px) clamp(32px, 6vw, 96px) clamp(16px, 6vw, 28px);
 html[data-theme="light"] .kw{ background: rgba(255,255,255,.75); color: #141414; }
 
 
+.ae-section,
+.ae-container,
+.ae-grid,
+.ae-intro-grid,
+.ae-xp-wrap,
+.ae-edu {
+  overflow-x: clip; 
+}
+
+.ae-flow{
+  right: 0;              
+  transform: translateX(10px);
+}
+
+.ae-intro-right .sp-viewport{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 680px){
+
+  .ae-xp-list,
+  .edu-stack {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
+}
