@@ -205,8 +205,8 @@ function XpCard({ xp }: { xp: Xp }) {
         >
           <span className="ae-expand-label">
             {open
-              ? t("experience.less", "Voir moins")
-              : t("experience.more", "Voir plus")}
+              ? t("experience.less")
+              : t("experience.more")}
           </span>
           <span className={`ae-chevron ${open ? "open" : ""}`} aria-hidden />
         </button>

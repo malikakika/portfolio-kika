@@ -25,13 +25,15 @@
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
-"about": {
+  "about": {
     "title": "Who is Malika?",
     "subtitle": "Full-stack Developer — React · Angular · NestJS · Spring Boot",
-  "desc": "Passionate full-stack developer turning ideas into reliable, elegant products. Front-end expert Angular, React, Vue, I also work full-stack Java/Spring, NestJS to design robust, scalable architectures. Leadership, teamwork, and project management to deliver fast, accessible, and genuinely useful applications."
+    "desc": "Passionate full-stack developer turning ideas into reliable, elegant products. Front-end expert Angular, React, Vue, I also work full-stack Java/Spring, NestJS to design robust, scalable architectures. Leadership, teamwork, and project management to deliver fast, accessible, and genuinely useful applications."
   },
   "experience": {
-        "title": "Experiences",
+    "title": "Experiences",
+    "less": "show less",
+    "more": "show more",
 
     "section_title": "Professional experience",
     "items": [
@@ -49,7 +51,23 @@
           "Contribute to Back-End and explore new Front-End frameworks",
           "Agile teamwork in human-sized squads & engineers community"
         ],
-        "stack": ["Java", "Spring Boot", "TypeScript", "Angular", "React", "Node.js", "NestJS", "Cypress", "Jest", "GitHub", "GitLab", "Docker", "AWS", "PostgreSQL", "Jira"]
+        "stack": [
+          "Java",
+          "Spring Boot",
+          "TypeScript",
+          "Angular",
+          "React",
+          "Node.js",
+          "NestJS",
+          "Cypress",
+          "Jest",
+          "GitHub",
+          "GitLab",
+          "Docker",
+          "AWS",
+          "PostgreSQL",
+          "Jira"
+        ]
       },
       {
         "id": "creteil",
@@ -63,7 +81,12 @@
           "General administrative support and daily operations",
           "Team collaboration for effective records management"
         ],
-        "stack": ["Organization", "Adaptability", "Communication", "Administration"]
+        "stack": [
+          "Organization",
+          "Adaptability",
+          "Communication",
+          "Administration"
+        ]
       },
       {
         "id": "digital-maroc",
@@ -89,7 +112,18 @@
           "Drove site design/development/maintenance",
           "Trained partners in Office, HTML/CSS/JS/PHP, Angular"
         ],
-        "stack": ["TypeScript", "Angular", "PHP", "React", "HTML5", "CSS", "JavaScript", "Agile", "Jira", "Git"]
+        "stack": [
+          "TypeScript",
+          "Angular",
+          "PHP",
+          "React",
+          "HTML5",
+          "CSS",
+          "JavaScript",
+          "Agile",
+          "Jira",
+          "Git"
+        ]
       },
       {
         "id": "lateliers",
@@ -98,10 +132,16 @@
         "company": "LATELIERS",
         "location": "",
         "mode": "Internship",
-        "bullets": [
-          "Built an RFID platform and improved internal tools"
-        ],
-        "stack": ["React Native", "TypeScript", "C#", "Azure", "MySQL", "Azure DevOps", "RFID"]
+        "bullets": ["Built an RFID platform and improved internal tools"],
+        "stack": [
+          "React Native",
+          "TypeScript",
+          "C#",
+          "Azure",
+          "MySQL",
+          "Azure DevOps",
+          "RFID"
+        ]
       },
       {
         "id": "maharat",
@@ -114,7 +154,14 @@
           "Created & led a training platform (design, dev, entrepreneurship)",
           "Project management, instructors coordination, learners communication"
         ],
-        "stack": ["Leadership", "Strategy", "Team management", "Pedagogy", "Content", "Organization"]
+        "stack": [
+          "Leadership",
+          "Strategy",
+          "Team management",
+          "Pedagogy",
+          "Content",
+          "Organization"
+        ]
       },
       {
         "id": "orange",
@@ -127,7 +174,17 @@
           "Parents/newborns networking platform: Angular front & Spring back",
           "Dockerization, technical docs & Swagger, Agile (Jira)"
         ],
-        "stack": ["Angular", "TypeScript", "Spring Boot", "Java", "PostgreSQL", "Docker", "Figma", "UML", "Git"]
+        "stack": [
+          "Angular",
+          "TypeScript",
+          "Spring Boot",
+          "Java",
+          "PostgreSQL",
+          "Docker",
+          "Figma",
+          "UML",
+          "Git"
+        ]
       }
     ]
   },
@@ -182,11 +239,17 @@
         "title": "Roadshine",
         "period": "2025",
         "brief": "Career guidance platform matching profiles with opportunities.",
-        "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker","Nx workspace"],
+        "stack": [
+          "React",
+          "NestJS",
+          "PostgreSQL",
+          "TypeScript",
+          "Docker",
+          "Nx workspace"
+        ],
         "category": "platform",
         "live": "https://roadshine.ma",
-        "cover":"/assets/roadshine.png"
-
+        "cover": "/assets/roadshine.png"
       },
       {
         "id": "acorad",
@@ -196,15 +259,11 @@
         "stack": ["React", "TypeScript", "Tailwind"],
         "category": "web",
         "live": "https://acoradacademy.com/",
-        "cover":"/assets/acorad.png"
-
-
-
+        "cover": "/assets/acorad.png"
       }
     ]
-  
   },
-    "footer": {
+  "footer": {
     "title": "Let’s build something great.",
     "tagline": "Got a project or an idea to explore? I reply quickly and bring pragmatic solutions.",
     "cta_email": "Email",
@@ -216,5 +275,4 @@
     "quick_links_aria": "Footer quick links",
     "rights": "All rights reserved."
   }
-
 }

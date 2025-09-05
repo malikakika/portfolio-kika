@@ -1,15 +1,15 @@
 {
- "header": {
-  "home": "Accueil",
-  "about": "À propos",
-  "services": "Services",
-  "projects": "Projets",
-  "contact": "Contact",
-  "toggle_to_light": "Passer en mode clair",
-  "toggle_to_dark": "Passer en mode sombre",
-  "lang_fr": "FR",
-  "lang_en": "EN"
-},
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "projects": "Projets",
+    "contact": "Contact",
+    "toggle_to_light": "Passer en mode clair",
+    "toggle_to_dark": "Passer en mode sombre",
+    "lang_fr": "FR",
+    "lang_en": "EN"
+  },
 
   "home": {
     "hello": "Hello 👋",
@@ -33,6 +33,8 @@
   },
   "experience": {
     "title": "Expériences",
+    "less": "voir moin",
+    "more": "voir plus",
 
     "section_title": "Expériences professionnelles",
     "items": [
