@@ -231,8 +231,16 @@
       "mobile": "Mobile",
       "game": "Game",
       "contrib": "Contribution",
-      "other": "Other"
+      "other": "Other",
+       "githubCard": {
+    "title": "My GitHub Projects",
+    "desc": "Explore all my work, contributions and experiments directly on my GitHub profile.",
+    "cta": "Open my GitHub",
+    "url": "https://github.com/malikachoubri"
+  }
+      
     },
+  
     "items": [
       {
         "id": "roadshine",

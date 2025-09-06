@@ -94,3 +94,17 @@
   font-weight: 700;
 }
 .btn.small.primary{ background: linear-gradient(135deg, var(--accent), #ff6aa9); color: var(--btn-txt); border: none; box-shadow: 0 0 22px rgba(255,45,135,.22); }
+
+
+.pj-card.pj-more{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(255,45,135,.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.06));
+}
