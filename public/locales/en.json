@@ -19,7 +19,9 @@
     "stat_years": "years experience",
     "stat_projects": "projects delivered",
     "stat_stack": "React • Angular • NestJS",
-    "stack_label": "Stack:"
+    "stack_label": "Stack:",
+     "cta_cv": "View my CV"
+
   },
   "social": {
     "linkedin": "LinkedIn",

@@ -3,6 +3,7 @@ import { useTranslation, Trans } from "react-i18next";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/EmailRounded";
+import DownloadIcon from "@mui/icons-material/Download"; 
 import HeroImage from "../../public/assets/malika-hero.png";
 import "../styles/home.css";
 import AboutExperience from "../components/About";
@@ -15,8 +16,22 @@ const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${enco
   "Bonjour Malika,\n\nJe vous contacte à propos de ..."
 )}`;
 
+const CV_FILES: Record<string, { url: string; filename: string }> = {
+  fr: {
+    url: "/assets/cv/Malika_Choubri_CV_FR.pdf",
+    filename: "Malika_Choubri_CV_FR.pdf",
+  },
+  en: {
+    url: "/assets/cv/Malika_Choubri_CV_EN.pdf",
+    filename: "Malika_Choubri_CV_EN.pdf",
+  },
+};
+
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const lang = (i18n.resolvedLanguage || i18n.language || "fr").slice(0, 2).toLowerCase();
+  const cvInfo = CV_FILES[lang] ?? CV_FILES.en;
 
   return (
     <>
@@ -103,6 +118,17 @@ export default function Home() {
             <a href="#projects" className="btn primary">
               {t("home.cta_projects")}
             </a>
+
+            <a
+              href={cvInfo.url}
+              download={cvInfo.filename}
+              className="btn secondary"
+              aria-label={t("home.cta_cv") || "Download CV"}
+              title={t("home.cta_cv") || "Download CV"}
+            >
+              <DownloadIcon style={{ fontSize: 20, marginRight: 8 }} />
+              <span>{t("home.cta_cv")}</span>
+            </a>
           </motion.div>
 
           <motion.ul
@@ -137,7 +163,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45 }}
           >
-            <span>{t("home.stack_label")}</span> React • Angular • Next.js • NestJS • Spring Boot • PostgreSQL • Docker ...
+            <span>{t("home.stack_label")}</span> React • Angular • Next.js • NestJS • Spring Boot •
+            PostgreSQL • Docker ...
           </motion.div>
         </div>
 

@@ -1,22 +1,57 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { scrollWow } from "../utils/scrollWow";
 import "../styles/header.css";
+
+function getHeaderOffset(): number {
+  const header = document.querySelector(".header-jc") as HTMLElement | null;
+  return header ? header.offsetHeight : 72; 
+}
+
+function getScrollableAncestor(el: HTMLElement): HTMLElement | null {
+  let p: HTMLElement | null = el.parentElement;
+  while (p) {
+    const style = getComputedStyle(p);
+    const canScrollY =
+      /(auto|scroll|overlay)/.test(style.overflowY) && p.scrollHeight > p.clientHeight;
+    if (canScrollY) return p;
+    p = p.parentElement;
+  }
+  return null;
+}
+
+function scrollToElement(el: HTMLElement, smooth = true) {
+  const headerOffset = getHeaderOffset();
+  const scrollable = getScrollableAncestor(el);
+
+  if (!scrollable) {
+    const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
+  } else {
+    const containerTop = scrollable.getBoundingClientRect().top;
+    const targetTop = el.getBoundingClientRect().top;
+    const top = targetTop - containerTop + scrollable.scrollTop - headerOffset;
+    scrollable.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
+  }
+}
+
+type NavItem =
+  | { label: string; type: "route"; to: string }
+  | { label: string; type: "hash"; hash: string };
 
 function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
   const lang = i18n.resolvedLanguage || i18n.language || "fr";
-  const next = lang === "fr" ? "en" : "fr";
+  const next = lang.startsWith("fr") ? "en" : "fr";
   const label = next === "fr" ? t("header.lang_fr") : t("header.lang_en");
 
-  const toggle = () => {
-    i18n.changeLanguage(next);
+  const toggle = async () => {
+    await i18n.changeLanguage(next);
     document.documentElement.setAttribute("lang", next);
   };
 
   return (
-    <button className="lang-toggle" onClick={toggle} aria-label="Change language">
+    <button className="lang-toggle" onClick={toggle} aria-label={label} title={label}>
       {label}
     </button>
   );
@@ -58,10 +93,6 @@ function ThemeToggle() {
   );
 }
 
-type NavItem =
-  | { label: string; type: "route"; to: string }
-  | { label: string; type: "hash"; hash: string }; 
-
 export default function Header() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
@@ -74,16 +105,17 @@ export default function Header() {
     if (location.pathname !== "/" || !location.hash) return;
 
     let tries = 0;
-    const tryScroll = () => {
-      const el = document.querySelector(location.hash);
+    const maxTries = 80;
+    const tick = () => {
+      const el = document.querySelector(location.hash) as HTMLElement | null;
       if (el) {
-        scrollWow(el, { duration: 900, overshoot: 80 });
-      } else if (tries < 20) {
+        scrollToElement(el, true);
+      } else if (tries < maxTries) {
         tries++;
-        requestAnimationFrame(tryScroll);
+        requestAnimationFrame(tick);
       }
     };
-    requestAnimationFrame(tryScroll);
+    requestAnimationFrame(tick);
   }, [location.pathname, location.hash]);
 
   const items: NavItem[] = [
@@ -93,35 +125,48 @@ export default function Header() {
     { label: t("header.contact"), type: "hash", hash: "#footer" },
   ];
 
-  const handleAnchorClick = (hash: string) => (e: React.MouseEvent) => {
-    const isHome = location.pathname === "/";
-    if (isHome) {
+  const handleAnchorClick =
+    (hash: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
-      scrollWow(hash, { duration: 900, overshoot: 80 });
-      setOpen(false);
-    } else {
-      e.preventDefault();
-      navigate("/" + hash);
-    }
-  };
+      const isHome = location.pathname === "/";
+      const el = document.querySelector(hash) as HTMLElement | null;
+
+      if (isHome) {
+        if (el) scrollToElement(el, true);
+        else navigate({ pathname: "/", hash }); 
+        setOpen(false);
+      } else {
+        navigate({ pathname: "/", hash });
+      }
+    };
 
   return (
     <header className="header-jc">
       <div className="inner">
-        <Link to="/" className="logo" aria-label="Retour à l'accueil" onClick={() => setOpen(false)}>
+        <Link
+          to="/"
+          className="logo"
+          aria-label={t("header.home") || "Accueil"}
+          onClick={() => setOpen(false)}
+        >
           <span className="logo-badge">MC</span>
         </Link>
 
         <nav className={`nav-jc ${open ? "open" : ""}`} aria-label="Navigation principale">
           {items.map((item) =>
             item.type === "route" ? (
-              <Link key={item.label} to={item.to} className="nav-btn" onClick={() => setOpen(false)}>
+              <Link
+                key={item.label}
+                to={item.to}
+                className="nav-btn"
+                onClick={() => setOpen(false)}
+              >
                 {item.label}
               </Link>
             ) : (
               <Link
                 key={item.label}
-                to={`/${item.hash}`}
+                to={{ pathname: "/", hash: item.hash }}
                 className="nav-btn"
                 onClick={handleAnchorClick(item.hash)}
               >
@@ -138,6 +183,7 @@ export default function Header() {
           className={`burger ${open ? "open" : ""}`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Ouvrir/fermer le menu"
+          title="Menu"
         >
           <span />
           <span />

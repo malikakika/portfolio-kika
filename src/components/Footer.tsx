@@ -4,8 +4,11 @@ import { useTranslation } from "react-i18next";
 import EmailIcon from "@mui/icons-material/EmailRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import DownloadIcon from "@mui/icons-material/Download"; 
+
 import { scrollWow } from "../utils/scrollWow";
 import "../styles/footer.css";
+import i18n from "../i18n";
 
 const EMAIL_ADDR = "malikachoubri@gmail.com";
 const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${encodeURIComponent(
@@ -13,10 +16,22 @@ const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${enco
 )}&su=${encodeURIComponent("Hello Malika")}&body=${encodeURIComponent(
   "Bonjour Malika,\n\nJe vous contacte à propos de ..."
 )}`;
-
+const CV_FILES: Record<string, { url: string; filename: string }> = {
+  fr: {
+    url: "/assets/cv/Malika_Choubri_CV_FR.pdf",
+    filename: "Malika_Choubri_CV_FR.pdf",
+  },
+  en: {
+    url: "/assets/cv/Malika_Choubri_CV_EN.pdf",
+    filename: "Malika_Choubri_CV_EN.pdf",
+  },
+};
 export default function Footer() {
   const { t } = useTranslation();
   const location = useLocation();
+  const lang = (i18n.resolvedLanguage || i18n.language || "fr").slice(0, 2).toLowerCase();
+
+  const cvInfo = CV_FILES[lang] ?? CV_FILES.en;
 
   const opts = { duration: 1100, overshoot: 100 };
 
@@ -78,6 +93,16 @@ export default function Footer() {
               >
                 {t("footer.view_work")}
               </a>
+               <a
+              href={cvInfo.url}
+              download={cvInfo.filename}
+              className="btn secondary"
+              aria-label={t("home.cta_cv") || "Download CV"}
+              title={t("home.cta_cv") || "Download CV"}
+            >
+              <DownloadIcon style={{ fontSize: 20, marginRight: 8 }} />
+              <span>{t("home.cta_cv")}</span>
+            </a>
 
               <a
                 href="https://www.linkedin.com/in/malika-choubri"

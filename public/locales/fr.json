@@ -20,7 +20,9 @@
     "stat_years": "années d’expérience",
     "stat_projects": "projets livrés",
     "stat_stack": "React • Angular • NestJS",
-    "stack_label": "Stack :"
+    "stack_label": "Stack :",
+    "cta_cv": "Voir mon CV"
+
   },
   "social": {
     "linkedin": "LinkedIn",
