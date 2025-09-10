@@ -1,14 +1,69 @@
-import {  useLocation } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import EmailIcon from "@mui/icons-material/EmailRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import DownloadIcon from "@mui/icons-material/Download"; 
+import DownloadIcon from "@mui/icons-material/Download";
 
-import { scrollWow } from "../utils/scrollWow";
 import "../styles/footer.css";
 import i18n from "../i18n";
+
+function getHeaderOffset(): number {
+  const header = document.querySelector(".header-jc") as HTMLElement | null;
+  return header ? header.offsetHeight : 72;
+}
+
+function getScrollableAncestor(el: HTMLElement): HTMLElement | null {
+  let p: HTMLElement | null = el.parentElement;
+  while (p) {
+    const style = getComputedStyle(p);
+    const canScrollY =
+      /(auto|scroll|overlay)/.test(style.overflowY) &&
+      p.scrollHeight > p.clientHeight;
+    if (canScrollY) return p;
+    p = p.parentElement;
+  }
+  return null;
+}
+
+function scrollToElement(el: HTMLElement, smooth = true) {
+  const headerOffset = getHeaderOffset();
+  const scrollable = getScrollableAncestor(el);
+  if (!scrollable) {
+    const top =
+      el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
+  } else {
+    const containerTop = scrollable.getBoundingClientRect().top;
+    const targetTop = el.getBoundingClientRect().top;
+    const top = targetTop - containerTop + scrollable.scrollTop - headerOffset;
+    scrollable.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
+  }
+}
+
+function assetUrl(relPath: string) {
+  const base = import.meta.env.BASE_URL || "/";
+  return new URL(relPath, window.location.origin + base).toString();
+}
+
+async function downloadFile(url: string, filename: string) {
+  try {
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const blob = await res.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = objectUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(objectUrl);
+  } catch {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+}
 
 const EMAIL_ADDR = "malikachoubri@gmail.com";
 const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${encodeURIComponent(
@@ -16,44 +71,54 @@ const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${enco
 )}&su=${encodeURIComponent("Hello Malika")}&body=${encodeURIComponent(
   "Bonjour Malika,\n\nJe vous contacte à propos de ..."
 )}`;
-const CV_FILES: Record<string, { url: string; filename: string }> = {
+
+const CV_FILES: Record<string, { path: string; filename: string }> = {
   fr: {
-    url: "/assets/cv/Malika_Choubri_CV_FR.pdf",
+    path: "assets/cv/Malika_Choubri_CV_FR.pdf",
     filename: "Malika_Choubri_CV_FR.pdf",
   },
   en: {
-    url: "/assets/cv/Malika_Choubri_CV_EN.pdf",
+    path: "assets/cv/Malika_Choubri_CV_EN.pdf",
     filename: "Malika_Choubri_CV_EN.pdf",
   },
 };
+
 export default function Footer() {
   const { t } = useTranslation();
   const location = useLocation();
-  const lang = (i18n.resolvedLanguage || i18n.language || "fr").slice(0, 2).toLowerCase();
+  const navigate = useNavigate();
 
-  const cvInfo = CV_FILES[lang] ?? CV_FILES.en;
+  const lang = (i18n.resolvedLanguage || i18n.language || "fr")
+    .slice(0, 2)
+    .toLowerCase();
+  const cv = CV_FILES[lang] ?? CV_FILES.en;
+  const cvUrl = assetUrl(cv.path);
 
-  const opts = { duration: 1100, overshoot: 100 };
+  const goToHash = (hash: string) => {
+    const isHome = location.pathname === "/";
+    if (isHome) {
+      const el = document.querySelector(hash) as HTMLElement | null;
+      if (el) scrollToElement(el, true);
+      else navigate({ pathname: "/", hash });
+    } else {
+      navigate({ pathname: "/", hash });
+    }
+  };
 
   const handleHashNav =
     (hash: string): React.MouseEventHandler<HTMLAnchorElement> =>
     (e) => {
-      const isHome = location.pathname === "/";
-      if (isHome) {
-        e.preventDefault();
-        scrollWow(hash, opts);
-      }
+      e.preventDefault();
+      goToHash(hash);
     };
 
   const handleHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     const isHome = location.pathname === "/";
     if (isHome) {
-      e.preventDefault();
-      try {
-        scrollWow("body", opts);
-      } catch {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate({ pathname: "/", hash: "" });
     }
   };
 
@@ -83,7 +148,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="btn primary"
               >
-                <EmailIcon style={{ fontSize: 18 }} /> {t("footer.cta_email") || "Open Gmail"}
+                <EmailIcon style={{ fontSize: 18 }} />{" "}
+                {t("footer.cta_email") || "Open Gmail"}
               </a>
 
               <a
@@ -93,16 +159,16 @@ export default function Footer() {
               >
                 {t("footer.view_work")}
               </a>
-               <a
-              href={cvInfo.url}
-              download={cvInfo.filename}
-              className="btn secondary"
-              aria-label={t("home.cta_cv") || "Download CV"}
-              title={t("home.cta_cv") || "Download CV"}
-            >
-              <DownloadIcon style={{ fontSize: 20, marginRight: 8 }} />
-              <span>{t("home.cta_cv")}</span>
-            </a>
+
+              <button
+                className="btn secondary"
+                onClick={() => downloadFile(cvUrl, cv.filename)}
+                aria-label={t("home.cta_cv") || "Download CV"}
+                title={t("home.cta_cv") || "Download CV"}
+              >
+                <DownloadIcon style={{ fontSize: 20, marginRight: 8 }} />
+                <span>{t("home.cta_cv")}</span>
+              </button>
 
               <a
                 href="https://www.linkedin.com/in/malika-choubri"
@@ -149,16 +215,35 @@ export default function Footer() {
               >
                 {t("footer.email_me") || "Email me"}
               </a>
-            
             </div>
           </motion.div>
         </div>
 
-        <nav className="foot-links" aria-label={t("footer.quick_links_aria") as string}>
-          <a href="/" onClick={handleHome}>{t("header.home")}</a>
-          <a href="/#about" onClick={handleHashNav("#about")}>{t("header.about")}</a>
-          <a href="/#projects" onClick={handleHashNav("#projects")}>{t("header.projects")}</a>
-          <a href="/#footer" onClick={handleHashNav("#footer")}>{t("header.contact")}</a>
+        <nav
+          className="foot-links"
+          aria-label={t("footer.quick_links_aria") as string}
+        >
+          <Link to="/" onClick={handleHome}>
+            {t("header.home")}
+          </Link>
+          <Link
+            to={{ pathname: "/", hash: "#about" }}
+            onClick={handleHashNav("#about")}
+          >
+            {t("header.about")}
+          </Link>
+          <Link
+            to={{ pathname: "/", hash: "#projects" }}
+            onClick={handleHashNav("#projects")}
+          >
+            {t("header.projects")}
+          </Link>
+          <Link
+            to={{ pathname: "/", hash: "#footer" }}
+            onClick={handleHashNav("#footer")}
+          >
+            {t("header.contact")}
+          </Link>
         </nav>
 
         <div className="foot-meta">
