@@ -20,8 +20,7 @@
     "stat_projects": "projects delivered",
     "stat_stack": "React • Angular • NestJS",
     "stack_label": "Stack:",
-     "cta_cv": "View my CV"
-
+    "cta_cv": "View my CV"
   },
   "social": {
     "linkedin": "LinkedIn",
@@ -234,15 +233,14 @@
       "game": "Game",
       "contrib": "Contribution",
       "other": "Other",
-       "githubCard": {
-    "title": "My GitHub Projects",
-    "desc": "Explore all my work, contributions and experiments directly on my GitHub profile.",
-    "cta": "Open my GitHub",
-    "url": "https://github.com/malikachoubri"
-  }
-      
+      "githubCard": {
+        "title": "My GitHub Projects",
+        "desc": "Explore all my work, contributions and experiments directly on my GitHub profile.",
+        "cta": "Open my GitHub",
+        "url": "https://github.com/malikachoubri"
+      }
     },
-  
+
     "items": [
       {
         "id": "roadshine",
@@ -260,6 +258,24 @@
         "category": "platform",
         "live": "https://roadshine.ma",
         "cover": "/assets/roadshine.png"
+      },
+      {
+        "id": "fileor",
+        "title": "Fileor – E-commerce Website",
+        "period": "2025",
+        "brief": "A complete e-commerce platform built with React, NestJS and PostgreSQL, deployed on a VPS using Docker and NGINX. It includes product management, order tracking and secure user authentication.",
+        "stack": [
+          "React",
+          "NestJS",
+          "PostgreSQL",
+          "TypeScript",
+          "Docker",
+          "NGINX",
+          "Nx workspace"
+        ],
+        "category": "ecommerce",
+        "live": "https://fileor.roadshine.ma",
+        "cover": "/assets/fileor.png"
       },
       {
         "id": "acorad",
