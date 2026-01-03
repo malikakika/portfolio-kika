@@ -226,6 +226,7 @@
     "subtitle": "Une sélection de réalisations récentes.",
     "filters": "Filtres",
     "view": "Voir le projet",
+
     "categories": {
       "all": "Tous",
       "web": "Web",
@@ -235,16 +236,36 @@
       "mobile": "Mobile",
       "game": "Jeu",
       "contrib": "Contribution",
-      "other": "Autre",
-      "githubCard": {
-        "title": "Mes projets GitHub",
-        "desc": "Découvrez toutes mes réalisations, contributions et expérimentations directement sur mon profil GitHub.",
-        "cta": "Voir mon GitHub",
-        "url": "https://github.com/malikachoubri"
-      }
+      "other": "Autre"
+    },
+
+    "githubCard": {
+      "title": "Mes projets GitHub",
+      "desc": "Découvrez toutes mes réalisations, contributions et expérimentations directement sur mon profil GitHub.",
+      "cta": "Voir mon GitHub",
+      "url": "https://github.com/malikachoubri"
     },
 
     "items": [
+       {
+        "id": "angular-pro-starter",
+        "title": "Angular Pro Starter",
+        "period": "2026",
+        "brief": "Starter Angular moderne et production-ready avec authentification, guards, tests unitaires et déploiement Docker + NGINX.",
+        "stack": [
+          "Angular 17+",
+          "TypeScript",
+          "Standalone Components",
+          "Auth & Guards",
+          "Karma",
+          "Docker",
+          "NGINX"
+        ],
+        "category": "platform",
+        "live": "https://angular-pro-starter.vercel.app",
+        "repo": "https://github.com/malikakika/angular-pro-starter",
+        "cover": "/assets/angular-pro-starter.png"
+      },
       {
         "id": "roadshine",
         "title": "Roadshine",
@@ -260,15 +281,22 @@
         ],
         "category": "platform",
         "live": "https://roadshine.ma",
-
         "cover": "/assets/roadshine.png"
       },
-       {
+      {
         "id": "fileor",
-        "title": "Fileor ",
+        "title": "Fileor",
         "period": "2025",
-        "brief": "Une plateforme e-commerce complète développée avec React, NestJS et PostgreSQL, déployée sur un VPS avec Docker et Nginx. Gestion des produits, des commandes et de l’authentification sécurisée.",
-        "stack": ["React", "NestJS", "PostgreSQL", "TypeScript", "Docker", "NGINX", "Nx workspace"],
+        "brief": "Une plateforme e-commerce complète développée avec React, NestJS et PostgreSQL, déployée sur un VPS avec Docker et NGINX. Gestion des produits, des commandes et de l’authentification sécurisée.",
+        "stack": [
+          "React",
+          "NestJS",
+          "PostgreSQL",
+          "TypeScript",
+          "Docker",
+          "NGINX",
+          "Nx workspace"
+        ],
         "category": "ecommerce",
         "live": "https://fileor.roadshine.ma",
         "cover": "/assets/fileor.png"
@@ -281,12 +309,12 @@
         "stack": ["React", "TypeScript", "Tailwind"],
         "category": "web",
         "live": "https://acoradacademy.com/",
-
         "cover": "/assets/acorad.png"
       }
      
     ]
   },
+
   "footer": {
     "title": "On construit quelque chose de génial ?",
     "tagline": "Un projet, une mission ou une idée à challenger ? Je réponds vite et j'apporte des solutions concrètes.",

@@ -218,77 +218,102 @@
       }
     ]
   },
-  "projects": {
-    "title": "Projects",
-    "subtitle": "A selection of recent work.",
-    "filters": "Filters",
-    "view": "View project",
-    "categories": {
-      "all": "All",
-      "web": "Web",
-      "platform": "Platform",
-      "pwa": "PWA",
-      "ecommerce": "E-commerce",
-      "mobile": "Mobile",
-      "game": "Game",
-      "contrib": "Contribution",
-      "other": "Other",
-      "githubCard": {
-        "title": "My GitHub Projects",
-        "desc": "Explore all my work, contributions and experiments directly on my GitHub profile.",
-        "cta": "Open my GitHub",
-        "url": "https://github.com/malikachoubri"
-      }
-    },
+"projects": {
+  "title": "My Projects",
+  "subtitle": "A selection of recent work.",
+  "filters": "Filters",
+  "view": "View project",
 
-    "items": [
-      {
-        "id": "roadshine",
-        "title": "Roadshine",
-        "period": "2025",
-        "brief": "Career guidance platform matching profiles with opportunities.",
-        "stack": [
-          "React",
-          "NestJS",
-          "PostgreSQL",
-          "TypeScript",
-          "Docker",
-          "Nx workspace"
-        ],
-        "category": "platform",
-        "live": "https://roadshine.ma",
-        "cover": "/assets/roadshine.png"
-      },
-      {
-        "id": "fileor",
-        "title": "Fileor – E-commerce Website",
-        "period": "2025",
-        "brief": "A complete e-commerce platform built with React, NestJS and PostgreSQL, deployed on a VPS using Docker and NGINX. It includes product management, order tracking and secure user authentication.",
-        "stack": [
-          "React",
-          "NestJS",
-          "PostgreSQL",
-          "TypeScript",
-          "Docker",
-          "NGINX",
-          "Nx workspace"
-        ],
-        "category": "ecommerce",
-        "live": "https://fileor.roadshine.ma",
-        "cover": "/assets/fileor.png"
-      },
-      {
-        "id": "acorad",
-        "title": "Acorad Academy",
-        "period": "2024",
-        "brief": "Responsive showcase website in React + TypeScript + Tailwind for a digital marketing expert.",
-        "stack": ["React", "TypeScript", "Tailwind"],
-        "category": "web",
-        "live": "https://acoradacademy.com/",
-        "cover": "/assets/acorad.png"
-      }
-    ]
+  "categories": {
+    "all": "All",
+    "web": "Web",
+    "platform": "Platform",
+    "pwa": "PWA",
+    "ecommerce": "E-commerce",
+    "mobile": "Mobile",
+    "game": "Game",
+    "contrib": "Contribution",
+    "other": "Other"
   },
+
+  "githubCard": {
+    "title": "My GitHub Projects",
+    "desc": "Explore all my work, contributions, and experiments directly on my GitHub profile.",
+    "cta": "View my GitHub",
+    "url": "https://github.com/malikachoubri"
+  },
+
+  "items": [
+    {
+      "id": "angular-pro-starter",
+      "title": "Angular Pro Starter",
+      "period": "2026",
+      "brief": "A modern, production-ready Angular starter featuring authentication, guards, unit testing, and Docker + NGINX deployment.",
+      "stack": [
+        "Angular 17+",
+        "TypeScript",
+        "Standalone Components",
+        "Auth & Guards",
+        "Karma",
+        "Docker",
+        "NGINX"
+      ],
+      "category": "platform",
+      "live": "https://angular-pro-starter.vercel.app",
+      "repo": "https://github.com/malikakika/angular-pro-starter",
+      "cover": "/assets/angular-pro-starter.png"
+    },
+    {
+      "id": "roadshine",
+      "title": "Roadshine",
+      "period": "2025",
+      "brief": "A career orientation platform designed to match user profiles with the right opportunities.",
+      "stack": [
+        "React",
+        "NestJS",
+        "PostgreSQL",
+        "TypeScript",
+        "Docker",
+        "Nx workspace"
+      ],
+      "category": "platform",
+      "live": "https://roadshine.ma",
+      "cover": "/assets/roadshine.png"
+    },
+    {
+      "id": "fileor",
+      "title": "Fileor",
+      "period": "2025",
+      "brief": "A full-featured e-commerce platform built with React, NestJS, and PostgreSQL, deployed on a VPS using Docker and NGINX. Includes product, order, and secure authentication management.",
+      "stack": [
+        "React",
+        "NestJS",
+        "PostgreSQL",
+        "TypeScript",
+        "Docker",
+        "NGINX",
+        "Nx workspace"
+      ],
+      "category": "ecommerce",
+      "live": "https://fileor.roadshine.ma",
+      "cover": "/assets/fileor.png"
+    },
+    {
+      "id": "acorad",
+      "title": "Acorad Academy",
+      "period": "2024",
+      "brief": "A responsive showcase website built with React, TypeScript, and Tailwind for a digital marketing expert.",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "category": "web",
+      "live": "https://acoradacademy.com/",
+      "cover": "/assets/acorad.png"
+    }
+  ]
+},
   "footer": {
     "title": "Let’s build something great.",
     "tagline": "Got a project or an idea to explore? I reply quickly and bring pragmatic solutions.",
