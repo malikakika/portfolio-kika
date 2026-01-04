@@ -247,6 +247,24 @@
     },
 
     "items": [
+      {
+  "id": "mami-delice",
+  "title": "Mami Délice",
+  "period": "2026",
+  "brief": "Site vitrine moderne pour un service de traiteur événementiel. Design immersif, navigation fluide et call-to-action optimisé pour la demande de devis via Gmail.",
+  "stack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Framer Motion",
+    "i18next",
+    "Responsive Design"
+  ],
+  "category": "web",
+  "live": "https://acorad-q6e9.vercel.app/",
+  "cover": "/assets/mami-delice.png"
+},
        {
         "id": "angular-pro-starter",
         "title": "Angular Pro Starter",
