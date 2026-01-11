@@ -248,24 +248,43 @@
 
     "items": [
       {
-  "id": "mami-delice",
-  "title": "Mami Délice",
-  "period": "2026",
-  "brief": "Site vitrine moderne pour un service de traiteur événementiel. Design immersif, navigation fluide et call-to-action optimisé pour la demande de devis via Gmail.",
-  "stack": [
-    "React",
-    "TypeScript",
-    "Vite",
-    "Tailwind CSS",
-    "Framer Motion",
-    "i18next",
-    "Responsive Design"
-  ],
-  "category": "web",
-  "live": "https://acorad-q6e9.vercel.app/",
-  "cover": "/assets/mami-delice.png"
-},
-       {
+        "id": "alcove-menuiserie",
+        "title": "Alcove Menuiserie",
+        "period": "2026",
+        "brief": "Site vitrine professionnel pour une entreprise de menuiserie et de charpente sur mesure basée à La Rochelle. Design élégant, architecture Vue modulaire, composants UI réutilisables, pages de services dynamiques et expérience utilisateur optimisée pour la prise de contact.",
+        "stack": [
+          "Vue 3",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Vue Router",
+          "Composants UI réutilisables",
+          "Design responsive",
+          "Déploiement Vercel"
+        ],
+        "category": "web",
+        "live": "https://alcovemenuiserie.vercel.app/",
+        "cover": "/assets/alcoveMenuiserie.png"
+      },
+      {
+        "id": "mami-delice",
+        "title": "Mami Délice",
+        "period": "2026",
+        "brief": "Site vitrine moderne pour un service de traiteur événementiel. Design immersif, navigation fluide et call-to-action optimisé pour la demande de devis via Gmail.",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Framer Motion",
+          "i18next",
+          "Responsive Design"
+        ],
+        "category": "web",
+        "live": "https://acorad-q6e9.vercel.app/",
+        "cover": "/assets/mami-delice.png"
+      },
+      {
         "id": "angular-pro-starter",
         "title": "Angular Pro Starter",
         "period": "2026",
@@ -329,7 +348,6 @@
         "live": "https://acoradacademy.com/",
         "cover": "/assets/acorad.png"
       }
-     
     ]
   },
 

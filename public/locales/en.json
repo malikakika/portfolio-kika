@@ -245,6 +245,26 @@
 
     "items": [
       {
+        "id": "alcove-menuiserie",
+        "title": "Alcove Menuiserie",
+        "period": "2026",
+        "brief": "Professional showcase website for a custom woodworking and carpentry company based in La Rochelle. Elegant design, modular Vue architecture, reusable UI components, responsive layout, and service-oriented pages with optimized user journey.",
+        "stack": [
+          "Vue 3",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Vue Router",
+          "Reusable UI Components",
+          "Responsive Design",
+          "Vercel Deployment"
+        ],
+        "category": "web",
+        "live": "https://alcovemenuiserie.vercel.app/",
+        "cover": "/assets/alcoveMenuiserie.png"
+      },
+
+      {
         "id": "mami-delice",
         "title": "Mami Délice",
         "period": "2026",
