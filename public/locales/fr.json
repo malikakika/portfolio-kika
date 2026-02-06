@@ -248,6 +248,25 @@
 
     "items": [
       {
+        "id": "valentine-landing",
+        "title": "Landing Page Interactive – Saint-Valentin",
+        "period": "2026",
+        "brief": "Expérience interactive monopage autour de la Saint-Valentin développée avec Vue 3. La page propose des animations ludiques sensibles au curseur, une mise en page immersive en plein écran, des assets graphiques personnalisés et des transitions fluides basées sur l’état de l’application. Ce projet explore une approche créative mêlant design émotionnel et interactivité frontend.",
+        "stack": [
+          "Vue 3",
+          "Vite",
+          "TypeScript",
+          "Animations CSS",
+          "Interactions basées sur le curseur",
+          "Design responsive",
+          "Déploiement GitHub Pages / Vercel"
+        ],
+        "category": "web",
+        "live": "https://valentine-page-navy.vercel.app/",
+        "cover": "/assets/valentineLanding.png"
+      },
+
+      {
         "id": "alcove-menuiserie",
         "title": "Alcove Menuiserie",
         "period": "2026",

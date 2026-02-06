@@ -245,6 +245,25 @@
 
     "items": [
       {
+        "id": "valentine-landing",
+        "title": "Valentine Interactive Landing Page",
+        "period": "2026",
+        "brief": "Interactive single-page Valentine experience built with Vue 3. Features playful cursor-aware button animations, immersive full-screen layout, custom background assets, and smooth state-based transitions. Designed as a creative UX experiment combining emotion-driven design and frontend interactivity.",
+        "stack": [
+          "Vue 3",
+          "Vite",
+          "TypeScript",
+          "CSS Animations",
+          "Cursor Interaction",
+          "Responsive Design",
+          "GitHub Pages / Vercel Deployment"
+        ],
+        "category": "web",
+        "live": "https://valentine-page-navy.vercel.app/",
+        "cover": "/assets/valentineLanding.png"
+      },
+
+      {
         "id": "alcove-menuiserie",
         "title": "Alcove Menuiserie",
         "period": "2026",
