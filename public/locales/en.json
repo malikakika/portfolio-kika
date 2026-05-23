@@ -402,6 +402,28 @@
         "cover": "/assets/fileor.png"
       },
       {
+  "id": "running-app",
+  "title": "Running App – Fitness Tracking PWA",
+  "period": "2025",
+  "brief": "A progressive web application (PWA) focused on fitness tracking and running experiences, built with Next.js and TypeScript. The project features immersive mobile-first UI, interactive maps, dynamic components and a modern fitness-inspired interface designed for performance, responsiveness and engaging user experience.",
+  "stack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Next PWA",
+    "Leaflet",
+    "React Leaflet",
+    "Styled Components",
+    "Responsive Design",
+    "Mobile-First UI/UX",
+    "PWA"
+  ],
+  "category": "mobile",
+  "live": "https://running-app-eosin.vercel.app/",
+  "repo": "https://github.com/malikakika/running-app",
+  "cover": "/assets/runningApp.png"
+},
+      {
         "id": "acorad",
         "title": "Acorad Academy",
         "period": "2024",
