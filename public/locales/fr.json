@@ -14,9 +14,9 @@
   "home": {
     "hello": "Hello 👋",
     "i_am": "Je suis <strong>Malika</strong>,",
-    "role": "Développeuse Fullstack",
-    "desc": "Spécialisée en React, Angular et NestJS, je conçois des applications performantes, modernes et accessibles. Actuellement en apprentissage chez Capgemini.",
-    "cta_projects": "Voir mes projets",
+   "role": "Développeuse Frontend & Full-stack",
+"desc": "Développeuse frontend et full-stack spécialisée en React, Angular, Vue, TypeScript et NestJS. Je conçois des applications modernes, performantes, responsives et centrées sur l’expérience utilisateur. ",
+"cta_projects": "Voir mes projets",
     "stat_years": "années d’expérience",
     "stat_projects": "projets livrés",
     "stat_stack": "React • Angular • NestJS",
@@ -247,6 +247,24 @@
     },
 
     "items": [
+        {
+  "id": "wedding-experience",
+  "title": "Wedding Experience – Interactive Event Website",
+  "period": "2026",
+  "brief": "Site événementiel immersif autour d’une expérience de mariage moderne, développé avec une approche frontend interactive et responsive. Le projet met en avant des animations fluides, une navigation élégante, des transitions visuelles raffinées et une expérience utilisateur pensée pour les événements premium. L’interface combine esthétique minimaliste, storytelling visuel et interactions dynamiques pour créer une présentation émotionnelle et immersive.",
+  "stack": [
+    "Vue 3",
+    "Vite",
+    "TypeScript",
+    "Animations CSS",
+    "Responsive Design",
+    "UI/UX immersive",
+    "Déploiement Vercel"
+  ],
+  "category": "web",
+  "live": "https://wedding-experience.vercel.app/",
+  "cover": "/assets/weddingExperience.png"
+},
       {
         "id": "valentine-landing",
         "title": "Landing Page Interactive – Saint-Valentin",
@@ -265,6 +283,8 @@
         "live": "https://valentine-page-navy.vercel.app/",
         "cover": "/assets/valentineLanding.png"
       },
+
+  
 
       {
         "id": "alcove-menuiserie",
@@ -337,6 +357,7 @@
         ],
         "category": "platform",
         "live": "https://roadshine.ma",
+        "repo": "https://github.com/malikakika/roadshine",
         "cover": "/assets/roadshine.png"
       },
       {
@@ -355,6 +376,7 @@
         ],
         "category": "ecommerce",
         "live": "https://fileor.roadshine.ma",
+        "repo": "https://github.com/malikakika/fileor-site-ecommerce",
         "cover": "/assets/fileor.png"
       },
       {

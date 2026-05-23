@@ -13,8 +13,8 @@
   "home": {
     "hello": "Hello 👋",
     "i_am": "I am <strong>Malika</strong>,",
-    "role": "Full-stack Developer",
-    "desc": "Specialized in React, Angular and NestJS, I build performant, modern and accessible apps. Currently an apprentice at Capgemini.",
+    "role": "Frontend & Full-stack Developer",
+    "desc": "Frontend and full-stack developer specialized in React, Angular, Vue, TypeScript and NestJS. I build modern, performant and user-focused web applications.",
     "cta_projects": "See my projects",
     "stat_years": "years experience",
     "stat_projects": "projects delivered",
@@ -38,9 +38,35 @@
 
     "section_title": "Professional experience",
     "items": [
-      {
-        "id": "capgemini",
-        "period": "Sep. 2024 — Present",
+    {
+  "id": "isagri",
+  "period": "Feb. 2026 — Present",
+  "role": "Software Engineer",
+  "company": "ISAGRI",
+  "location": "Paris, Île-de-France, France",
+  "mode": "Hybrid · Permanent Contract",
+  "bullets": [
+    "Develop web applications using Node.js, NestJS and Vue.js in a modern agile environment",
+    "Design and develop performant and secure backend APIs",
+    "Build dynamic and responsive user interfaces with Vue.js",
+    "Participate in code quality improvement, technical reviews and performance optimization",
+    "Collaborate with product and design teams to deliver functional and user-focused features"
+  ],
+  "stack": [
+    "Node.js",
+    "NestJS",
+    "Vue.js",
+    "TypeScript",
+    "REST API",
+    "Agile",
+    "Git",
+    "Frontend Development",
+    "Backend Development"
+  ]
+},
+{
+  "id": "capgemini",
+  "period": "Sept. 2024 — Oct. 2025",
         "role": "Software Engineer",
         "company": "Capgemini Engineering",
         "location": "Issy-les-Moulineaux, Île-de-France",
@@ -245,6 +271,24 @@
 
     "items": [
       {
+  "id": "wedding-experience",
+  "title": "Wedding Experience – Interactive Event Website",
+  "period": "2026",
+  "brief": "An immersive wedding event website designed to deliver a modern and elegant digital experience. Developed with a responsive and interactive frontend approach, the project features smooth animations, refined visual transitions, and dynamic user interactions. The interface combines minimalist aesthetics, emotional storytelling, and premium UI/UX design to create a visually engaging and memorable experience.",
+  "stack": [
+    "Vue 3",
+    "Vite",
+    "TypeScript",
+    "CSS Animations",
+    "Responsive Design",
+    "Interactive UI/UX",
+    "Vercel Deployment"
+  ],
+  "category": "web",
+  "live": "https://wedding-experience.vercel.app/",
+  "cover": "/assets/weddingExperience.png"
+},
+      {
         "id": "valentine-landing",
         "title": "Valentine Interactive Landing Page",
         "period": "2026",
@@ -335,6 +379,7 @@
         ],
         "category": "platform",
         "live": "https://roadshine.ma",
+        "repo": "https://github.com/malikakika/roadshine",
         "cover": "/assets/roadshine.png"
       },
       {
@@ -353,6 +398,7 @@
         ],
         "category": "ecommerce",
         "live": "https://fileor.roadshine.ma",
+        "repo": "https://github.com/malikakika/fileor-site-ecommerce",
         "cover": "/assets/fileor.png"
       },
       {
